@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Roles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Lista de Roles</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ui:repeat value="#{rolesController.roles}" var="rol">
+                    <tr>
+                        <td>#{rol.id}</td>
+                        <td>#{rol.nombre}</td>
+                    </tr>
+                </ui:repeat>
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/roles/crear">Crear Nuevo Rol</a>
+    </div>
+</body>
+</html>
